@@ -1,102 +1,31 @@
-# 📚 Sistema de Leitura - Gutendex API
+# LiterAlura - Sistema de Leitura (Gutendex API)
+# LiterAlura - Reading System (Gutendex API)
 
-Sistema Spring Boot que consome a API Gutendex para gerenciar livros do Project Gutenberg com PostgreSQL.
+**Sistema Spring Boot que consome a API Gutendex para gerenciar livros do Project Gutenberg com PostgreSQL. Permite buscar, listar e gerenciar livros por autor, idioma e título.**
 
-## 🚀 Funcionalidades
-
-* Buscar livros por título
-* Listar livros e autores cadastrados
-* Filtrar por idioma e período de vida dos autores
-* API REST completa
-* Console interativo
-
-## 📋 Tecnologias
-
-* Java 25 + Spring Boot 4.0.1
-* PostgreSQL
-* Gutendex API
-* Maven
-
-## 🔧 Instalação
-```bash
-# Clone o repositório
-git clone https://github.com/marcuslaf/literAlura-challengejava
-cd leitura
-
-# Configure o PostgreSQL
-psql -U postgres
-CREATE DATABASE leituradb;
-\q
-
-# Configure a aplicação
-# Edite application.properties com suas credenciais do PostgreSQL
-
-# Execute
-mvn spring-boot:run
-```
-
-## 📖 Como Usar
-
-### Console Interativo
-
-Aparecerá automaticamente ao executar:
-```
-=== MENU PRINCIPAL ===
-1 - Buscar livro por título
-2 - Listar livros registrados
-3 - Listar autores registrados
-4 - Listar autores vivos em determinado ano
-5 - Listar livros em um determinado idioma
-0 - Sair
-```
-
-### API REST
-```
-GET /api/           - Status da aplicação
-GET /api/livros     - Lista todos os livros
-GET /api/autores    - Lista todos os autores
-GET /api/health     - Health check
-POST /api/livros/cadastrar-teste - Cadastra livros de teste
-```
-
-### Exemplos de uso:
-```bash
-# Ver livros cadastrados
-curl http://localhost:8080/api/livros
-
-# Cadastrar livros de teste
-curl -X POST http://localhost:8080/api/livros/cadastrar-teste
-
-# Buscar livros no banco
-curl "http://localhost:8080/api/livros/buscar?titulo=Sherlock"
-```
-
-## 🗃️ Banco de Dados
-
-**Tabela:** `livros_registrados`
-
-* id, gutenberg_id, titulo, autor, idioma, downloads
-
-## 🐛 Comandos Úteis
-```bash
-# Ver livros no PostgreSQL
-psql -U postgres -d leituradb -c "SELECT * FROM livros_registrados LIMIT 10;"
-
-# Compilar
-mvn clean install
-
-# Executar
-mvn spring-boot:run
-```
-
-## 📞 Suporte
-
-### Erros comuns:
-
-* **Database does not exist:** Crie o banco `leituradb`
-* **Tabela não existe:** A aplicação criará automaticamente
-* **Porta em uso:** Mude para 8081 em application.properties
+**Spring Boot system that consumes the Gutendex API to manage Project Gutenberg books with PostgreSQL. Search, list, and manage books by author, language, and title.**
 
 ---
 
-⭐ Se este projeto foi útil, considere dar uma estrela!
+## Tecnologias | Technologies
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+## Funcionalidades | Features
+
+- Busca de livros por título | Search books by title
+- Listagem por autor/idioma | Listing by author/language
+- Consumo de API REST externa | External REST API consumption
+- Persistência com PostgreSQL | PostgreSQL persistence
+
+---
+
+## Autor | Author
+
+**Marcus Lafaiete** — [@marcuslaf](https://github.com/marcuslaf)
+
+---
+
+<div align="center">
+  <img src="https://img.shields.io/badge/status-conclu%C3%ADdo-success?style=for-the-badge"/>
+</div>
